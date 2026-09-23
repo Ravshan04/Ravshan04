@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/terminal.svg" width="100%" alt="Terminal banner introducing Ravshanbek Nazarov, a software engineer working across .NET, infrastructure, and developer tools" />
+  <img src="./assets/terminal.gif" width="100%" alt="Animated terminal banner introducing Ravshanbek Nazarov and cycling through .NET, DevOps, and developer tooling" />
 </p>
 
 ### `> whoami`
@@ -23,6 +23,10 @@ working_at    = "Abstract IT Group"
 ### `> cat toolbox.txt`
 
 `C#` `ASP.NET Core` `.NET` `Rust` `Python` `Docker` `Terraform` `AWS` `Linux` `GitHub Actions`
+
+<p align="center">
+  <img src="./assets/pipeline.gif" width="100%" alt="Animated signal moving through backend, infrastructure, and developer tools" />
+</p>
 
 ### `> connect --with-me`
 
