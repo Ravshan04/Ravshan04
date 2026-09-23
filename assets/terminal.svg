@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="250" viewBox="0 0 900 250" role="img" aria-labelledby="title desc">
+  <title id="title">Ravshanbek Nazarov</title>
+  <desc id="desc">A terminal-style banner for a software engineer focused on .NET, infrastructure, and developer tools.</desc>
+  <rect width="900" height="250" rx="8" fill="#0d1117"/>
+  <rect x="1" y="1" width="898" height="248" rx="7" fill="none" stroke="#303b4a" stroke-width="2"/>
+  <path d="M1 43h898" stroke="#303b4a" stroke-width="2"/>
+  <circle cx="22" cy="22" r="5" fill="#fb7185"/>
+  <circle cx="42" cy="22" r="5" fill="#fbbf24"/>
+  <circle cx="62" cy="22" r="5" fill="#34d399"/>
+  <text x="450" y="27" fill="#8b9db0" font-family="Consolas, Menlo, monospace" font-size="15" text-anchor="middle">ravshan@github: ~</text>
+  <text x="38" y="87" fill="#34d399" font-family="Consolas, Menlo, monospace" font-size="19">$ whoami</text>
+  <text x="38" y="151" fill="#f2f6fa" font-family="Consolas, Menlo, monospace" font-size="49" font-weight="700">Ravshanbek Nazarov</text>
+  <text x="39" y="197" fill="#72dce8" font-family="Consolas, Menlo, monospace" font-size="22">.NET  /  infrastructure  /  developer tools</text>
+  <text x="39" y="229" fill="#8b9db0" font-family="Consolas, Menlo, monospace" font-size="16">Tashkent, Uzbekistan</text>
+  <rect x="230" y="215" width="10" height="17" fill="#34d399"/>
+</svg>
