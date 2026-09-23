@@ -52,7 +52,7 @@ def terminal_frame(step):
     draw.text((38, 71), "$ whoami", font=font(21), fill=GREEN)
     draw.text((38, 111), "Ravshanbek Nazarov", font=font(52, bold=True), fill=WHITE)
 
-    roles = ("C# / .NET engineer", "DevOps / infrastructure", "AI & developer tooling")
+    roles = ("C# / .NET developer", "DevOps engineer", "AI engineer")
     phase = (step % 90) / 30
     role = roles[int(phase)]
     part = phase % 1
@@ -74,30 +74,40 @@ def terminal_frame(step):
     return image
 
 
-def pipeline_frame(step):
+def about_frame(step):
     image, draw = base((960, 145))
-    draw.text((32, 15), "$ route --from idea --to production", font=font(19), fill=GREEN)
+    draw.text((32, 18), "$ cat about_me.txt", font=font(20), fill=GREEN)
 
-    nodes = ((148, "BACKEND", GREEN), (480, "INFRA", CYAN), (812, "TOOLS", AMBER))
-    signal_x = 148 + (664 * (step % 60) / 59)
-    draw.line((148, 120, 812, 120), fill=BORDER, width=3)
-    draw.line((148, 120, signal_x, 120), fill=CYAN, width=3)
+    details = (
+        "Based in Tashkent, Uzbekistan",
+        "Software Engineer at Abstract IT Group",
+        "C# / .NET  |  AI  |  DevOps",
+    )
+    index = (step % 90) // 30
+    part = (step % 30) / 30
+    detail = details[index]
+    if part < 0.4:
+        count = int(len(detail) * part / 0.4)
+    elif part < 0.8:
+        count = len(detail)
+    else:
+        count = int(len(detail) * (1 - (part - 0.8) / 0.2))
+    typed = detail[:count]
+    draw.text((34, 68), "> " + typed, font=font(27), fill=CYAN)
+    cursor_x = 34 + draw.textlength("> " + typed, font=font(27)) + 5
+    if step % 10 < 7:
+        draw.rectangle((cursor_x, 69, cursor_x + 13, 98), fill=GREEN)
 
-    for x, label, color in nodes:
-        active = abs(signal_x - x) < 95
-        draw.line((x, 103, x, 119), fill=color if active else BORDER, width=2)
-        draw.rounded_rectangle((x - 116, 57, x + 116, 103), radius=5, fill=PANEL, outline=color if active else BORDER, width=2)
-        label_width = draw.textlength(label, font=font(20, bold=True))
-        draw.text((x - label_width / 2, 68), label, font=font(20, bold=True), fill=color if active else MUTED)
-
-    draw.ellipse((signal_x - 6, 114, signal_x + 6, 126), fill=WHITE)
+    for position in range(3):
+        left = 34 + position * 62
+        draw.rectangle((left, 120, left + 46, 124), fill=(GREEN, CYAN, AMBER)[position] if position == index else BORDER)
     return image
 
 
 def main():
     ASSETS.mkdir(exist_ok=True)
     save_gif([terminal_frame(step) for step in range(90)], ASSETS / "terminal.gif")
-    save_gif([pipeline_frame(step) for step in range(60)], ASSETS / "pipeline.gif")
+    save_gif([about_frame(step) for step in range(90)], ASSETS / "about.gif")
 
 
 if __name__ == "__main__":
